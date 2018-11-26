@@ -222,8 +222,5 @@ function queryHas($val) {
       <?php endif; ?>
     
     </script>
-    <script>
-        document.querySelector('a').remove()
-    </script>
   </body>
 </html>
