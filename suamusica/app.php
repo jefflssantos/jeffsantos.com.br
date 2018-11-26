@@ -11,10 +11,6 @@ Debugger::enable();
 $album['musics'] = [];
 
 if(isset($_GET['q'])) {
-    // setcookie('CloudFront-Key-Pair-Id', 'APKAJXI72ADZRFKVIR2Q', 0, '/');
-    // setcookie('CloudFront-Policy', 'eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9zdHJlYW0uc3VhbXVzaWNhLmNvbS5ici8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNTE5MzA4MTcyfX19XX0_', 0, '/');
-    // setcookie('CloudFront-Signature', 'Z5%7EO61Dy6kBjelmEeYiyRsT9bK5afsYx3tfvzGFyfspm8RzaSJpjV6z6yF12dXlxxbmMTpX5nG7KMnG3QIbI46i%7EM-NX8DB%7ESsHOPvJvLCWqlnY8bs8p6Knu9iuJJioF8xbfk9ylgTQobNHbRg4V8uGmhVrwEx3e3xgbzvR9Z6ZanXmh3D31sTGtU%7EEIens18QuDhuvrSdJ6BZTqfdCnX7M6DYL0ZX9JRotqBImLSm8Bgi4N7wqieiXpa%7E22TCgzfFCI6IBcOugAY7n9vToF1tvz8OeGvsaUA4v1Z3lcOfo9F9djoI8HhQ-2o0mqQH6o3lWwbrRv8ubhxs4K73164g__', 0, '/');
-
     $client = new \GuzzleHttp\Client();
 
     $response = $client->request(
@@ -41,5 +37,5 @@ if(isset($_GET['q'])) {
 }
 
 function getMusicUrl($music) {
-    return "https://stream.suamusica.com.br/{$music->dono}/{$music->cdid}/" . rawurlencode($music->titulo);
+    return "https://web-stream.suamusica.com.br/{$music->dono}/{$music->cdid}/" . rawurlencode($music->titulo);
 }
