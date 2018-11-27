@@ -6,7 +6,7 @@ use GuzzleHttp\Stream\Stream;
 use Sunra\PhpSimple\HtmlDomParser;
 use Tracy\Debugger;
 
-Debugger::enable();
+// Debugger::enable();
 
 $album['musics'] = [];
 

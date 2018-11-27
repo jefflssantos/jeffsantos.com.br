@@ -1,5 +1,4 @@
 <?php require 'app.php'; ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -130,16 +129,25 @@
           </div>
         </nav>
 
-        <audio id="player" controls preload="none" class="d-none">
+<!--         <audio id="player" controls preload="none" class="d-none">
             <source src="<?= getMusicUrl($album['musics'][0]) ?>" id="mp3-source" type="audio/mp3">
         </audio>
 
         <audio id="player-buffer" class="d-none" controls preload="none">
             <source src="#" id="mp3-source-buffer" type="audio/mp3">
-        </audio>
+        </audio> -->
+
+        <video id="player" player width="352" height="198" controls preload="none">
+            <source src="https://web-stream.suamusica.com.br/373377/2277878/stream/04%20Sexo.m3u8" id="mp3-source" type="application/x-mpegURL">
+            <!-- <source src="<?= getMusicUrl($album['musics'][0]) ?>" id="mp3-source" type="application/x-mpegURL"> -->
+        </video>
+
+        <video id="player-buffer" player width="352" height="198" controls preload="none">
+            <source src="#" id="mp3-source-buffer" type="application/x-mpegURL">
+        </video>
     <?php endif ?>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" defer></script>
-    <script src="app.js?v=1" defer></script>
+    <script src="app.js?v=2" defer></script>
 </body>
 </html>
