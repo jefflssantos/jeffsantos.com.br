@@ -65,7 +65,6 @@
                         </div>
                     </button>
                   <?php endforeach ?>
-
                 </div>
             </div>
         </div>
