@@ -55,6 +55,7 @@
 </div>
 <div id="swagger-ui"></div>
 <script async="async" src="//unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
+<script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
   window.onload = function () {
     const ui = SwaggerUIBundle({
@@ -71,6 +72,9 @@
     })
 
     window.ui = ui
+      
+    $.get('https://dev-curupira-dot-opus-dev-si-vente.appspot.com/test')
+      .done(e => console.log(e))
   }
 </script>
 </body>
