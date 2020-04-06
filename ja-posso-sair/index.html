@@ -1,53 +1,77 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
+<html lang="{{ app()->getLocale() }}">
+<head>
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#000">
+    <meta name="msapplication-TileImage" content="/img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="//unpkg.com/swagger-ui-dist@3.19.0/swagger-ui.css">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Boitatá PIM API Documentation</title>
 
-    <title>Simbora!</title>
-  </head>
-  <body>
-    <div class="container pt-5">
-    	<div class="row">
-    		<div class="col-12 col-lg-4">
-    			<div class="card">
-    				<div class="card-body">
-    					<form action="/">
-    						<div class="form-group">
-    							<label>Entrada</label>
-    							<input type="text" class="form-control" id="start-time" data-mask="00:00" value="08:30">
-    						</div>
-    						<div class="form-group">
-    							<label>Intervalo</label>
-    							<input type="text" class="form-control" id="interval" data-mask="00:00" value="01:00">
-    						</div>
-    						<div class="form-group">
-    							<label>Saída</label>
-    							<input type="text" class="form-control" id="end-time" data-mask="00:00" value="00:00">
-    						</div>
-    						<div class="form-group">
-    							<label>Horas diárias</label>
-    							<input type="text" class="form-control" id="daily-hours" data-mask="00:00" value="08:48">
-    						</div>
-    					</form>
-    				</div>
-    			</div>
-    		</div>
-    		<div class="col-12 col-lg-8">
-    			<h1>00:00</h1>
-    		</div>
-    	</div>
-    </div>
+    <style>
+        html {
+            box-sizing: border-box;
+            overflow: -moz-scrollbars-vertical;
+            overflow-y: scroll;
+        }
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script defer src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
-    <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-  </body>
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            background: #fafafa;
+        }
+        #boitata-header {
+            text-align: center;
+            background-color: #000;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="boitata-header">
+    <img id="boitata-logo" src="https://dev-curupira-dot-opus-dev-si-vente.appspot.com/img/boitata.png" alt="Boitatá Logo"/>
+</div>
+<div id="swagger-ui"></div>
+<script async="async" src="//unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
+<script>
+  window.onload = function () {
+    const ui = SwaggerUIBundle({
+      url: 'https://dev-curupira-dot-opus-dev-si-vente.appspot.com/api/v1/documentation.yml',
+      dom_id: '#swagger-ui',
+      deepLinking: true,
+      presets: [
+        SwaggerUIBundle.presets.apis,
+      ],
+      plugins: [
+        SwaggerUIBundle.plugins.DownloadUrl
+      ],
+      layout: 'BaseLayout'
+    })
+
+    window.ui = ui
+  }
+</script>
+</body>
 </html>
