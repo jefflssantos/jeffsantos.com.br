@@ -53,11 +53,24 @@
 <div id="boitata-header">
     <img id="boitata-logo" src="https://dev-curupira-dot-opus-dev-si-vente.appspot.com/img/boitata.png" alt="Boitatá Logo"/>
 </div>
-<script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<div id="swagger-ui"></div>
+<script async="async" src="//unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
 <script>
   window.onload = function () {
-    $.get('https://dev-curupira-dot-opus-dev-si-vente.appspot.com/test')
-      .done(e => console.log('testing', e))
+    const ui = SwaggerUIBundle({
+      url: 'https://dev-curupira-dot-opus-dev-si-vente.appspot.com/',
+      dom_id: '#swagger-ui',
+      deepLinking: true,
+      presets: [
+        SwaggerUIBundle.presets.apis,
+      ],
+      plugins: [
+        SwaggerUIBundle.plugins.DownloadUrl
+      ],
+      layout: 'BaseLayout'
+    })
+
+    window.ui = ui
   }
 </script>
 </body>
